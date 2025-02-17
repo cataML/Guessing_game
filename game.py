@@ -6,9 +6,9 @@ print("\nThe program has selected a number from 1 to 10. Kindly guess the number
 
 def play_game():
     print("Choose difficulty level: ")
-    print("\n1️ - Easy(6 attempts)")
-    print("\n2 - Medium(5 attempts)")
-    print("\n3 - Hard(3 attempts)" )
+    print("1 - Easy(6 attempts)")
+    print("2 - Medium(5 attempts)")
+    print("3 - Hard(3 attempts)" )
     
     while True:
         difficulty = int(input("Choose your level (1/2/3): "))
