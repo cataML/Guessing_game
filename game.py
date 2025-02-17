@@ -1,13 +1,12 @@
 import random
-sec_num = random.randint(1, 10)
-attempts = 5 #number of attempts 
-count = 0 # counting the number of guesses
 
 print("\nWelcome to Rising _Force number guessing game. ")
 print()
 print("\nThe program has selected a number from 1 to 10. Kindly guess the number.\n ")
-def guess():
-    global attempts, count
+def play_game():
+    sec_num = random.randint(1, 10)
+    attempts = 5 #number of attempts 
+    count = 0 # counting the number of guesses
    
     while attempts > 0:
         try: # Error if guess is not an integer
@@ -30,8 +29,13 @@ def guess():
 
         if attempts == 0:
             print(f"You are out of attempts. The correct number was {sec_num} ")
-            print("Game over")
+    restart = input("Do you want to play again? (yes/no): ").strip()
+    if restart == "yes":
+        play_game()
+    else:
+        print("Thank you for playing")
+        return
 
-        if guess >10:
-            print("Out of rannge. Guess anumber from 1 to 10")
-guess() #call the function to start the game       
+
+       
+play_game() #call the function to start the game       
