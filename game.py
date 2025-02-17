@@ -1,16 +1,16 @@
-import random
-import time
+import random # Random number generation 
+import time # Time module for timing
 
 print("\nWelcome to Rising _Force number guessing game. ")
 print("\nThe program has selected a number from 1 to 10. Kindly guess the number.\n ")
 
-def play_game():
+def play_game(): # Difficulty of different levels
     print("Choose difficulty level: ")
     print("1 - Easy(6 attempts)")
     print("2 - Medium(5 attempts)")
     print("3 - Hard(3 attempts)" )
     
-    while True:
+    while True: 
         difficulty = int(input("Choose your level (1/2/3): "))
         if difficulty == 1:
             attempts = 6
@@ -23,13 +23,14 @@ def play_game():
             break
         else:
             print("Invalid choice, enter 1, 2 or 3.")
-            print(f"You have selected level {difficulty}")
+        
    
-    while True:
-        sec_num = random.randint(1, 10)
+    while True: # The game
+        print(f"You have selected level {difficulty}, you have {attempts}. ")
+        sec_num = random.randint(1, 10) # Generates random numbers from 1-10
         count = 0 # counting the number of guesses
         
-        start_time = time.time()
+        start_time = time.time() # Time starts counting
         while attempts > 0:
             try: # Error if guess is not an integer
                 guess = int(input("Enter your guess here: "))
@@ -53,9 +54,9 @@ def play_game():
                 return
         
             if attempts == 0:
-                end_time = time.time()
+                end_time = time.time() # end timer
                 print(f"You are out of attempts. The correct number was {sec_num} ")
-        restart = input("Do you want to play again? (yes/no): ")
+        restart = input("Do you want to play again? (yes/no): ")# Restart the game if you wish
         if restart == "yes":
             play_game()
         else:
