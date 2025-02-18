@@ -26,7 +26,7 @@ def play_game(): # Difficulty of different levels
         
    
     while True: # The game
-        print(f"You have selected level {difficulty}, you have {attempts}. ")
+        print(f"You have selected level {difficulty}, you have {attempts} attempts. ")
         sec_num = random.randint(1, 10) # Generates random numbers from 1-10
         count = 0 # counting the number of guesses
         
@@ -60,6 +60,7 @@ def play_game(): # Difficulty of different levels
         if restart == "yes":
             play_game()
         else:
-            print("Thank you for playing")
+            print("Thank you for playing") 
+            break
      
 play_game() #call the function to start the game       
